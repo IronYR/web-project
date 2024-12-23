@@ -12,7 +12,7 @@ import { UserContextProvider } from "./context/userContext.jsx";
 import ValidationFailure from "./pages/ValidationFailure.jsx";
 import Profile from "./pages/Profile.jsx";
 import { CartProvider } from "./context/cart";
-import { Shoppingcart } from "./pages/Shoppingcart";
+import { Shoppingcart } from "./pages/Shoppingcart.jsx";
 import ProductCatalog from "./pages/ProductCatalog";
 import SellerDash from "./pages/SellerDash";
 import SellerHome from "./pages/SellerHome";
