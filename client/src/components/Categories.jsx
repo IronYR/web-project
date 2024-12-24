@@ -32,7 +32,7 @@ const Categories =()=> {
             </div>
             <h3 className="mb-2 text-lg font-semibold">Organic Products</h3>
           </div>
-          <div className="flex flex-col items-center rounded-lg bg-white p-4 transition-all hover:scale-105 dark:bg-gray-950 cursor-pointer" onClick={() => navigate(`/products?category=education`)}>
+          <div className="flex flex-col items-center rounded-lg bg-white p-4 transition-all hover:scale-105 dark:bg-gray-950 cursor-pointer" onClick={() => navigate(`/products?category=educational`)}>
             <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50">
               <img src={Leatherwork} className="h-10 w-10" />
             </div>
