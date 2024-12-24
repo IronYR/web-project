@@ -73,8 +73,8 @@ import {
   import { Switch } from "../components/ui/switch"
   
   const AddProduct =() =>{
-    const preset_key = process.env.REACT_APP_CLOUDINARY_PRESET_KEY;
-    const cloud_name = process.env.REACT_APP_CLOUD_NAME;
+    const preset_key = process.env.REACT_APP_CLOUDINARY_PRESET_KEY || "funoon"; 
+    const cloud_name = process.env.REACT_APP_CLOUD_NAME || "yousuf";
     const { user, ready,setUser } = useContext(UserContext);
     const [preview, setPreview] = useState(null);
     const [data, setData] = useState({
@@ -115,6 +115,8 @@ import {
         formData.append("file", data.image);
         formData.append("upload_preset", preset_key);
         formData.append("cloud_name", cloud_name);
+        console.log(preset_key)
+        console.log(cloud_name)
         const res = await fetch(
           `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
           {
@@ -392,16 +394,16 @@ import {
                               <SelectValue placeholder="Select category" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="ceramic"
-                              >Ceramic</SelectItem>
+                              <SelectItem value="handicrafts"
+                              >Handicrafts</SelectItem>
                               <SelectItem value="textile">
-                                Textile
+                                Textile/Traditional Clothing
                               </SelectItem>
-                              <SelectItem value="wood">
-                                Wood
+                              <SelectItem value="organic">
+                                Organic Products
                               </SelectItem>
-                              <SelectItem value="leather">
-                                Leather
+                              <SelectItem value="educational">
+                                Educational Services
                               </SelectItem>
                             </SelectContent>
                           </Select>

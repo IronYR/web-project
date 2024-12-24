@@ -27,10 +27,10 @@ const FeaturedArtisan = () => {
       <div className="container grid gap-6 md:gap-8 px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
           <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-            Featured Artisans
+            Featured Entrepreneurs
           </h2>
           <p className="text-gray-500 dark:text-gray-400">
-            Discover unique handcrafted products from talented local artisans.
+          Highlighting success stories and top-performing rural women entrepreneurs.
           </p>
           <Button
             className="ml-auto shrink-0 bg-gray-900 text-gray-50 hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90"

@@ -14,8 +14,8 @@ import { Separator } from "../components/ui/seperator";
 import { UserContext } from '../context/userContext';
 import { Textarea } from '../components/ui/textarea';
 export const SellerRegistration = () => {
-    const preset_key = process.env.REACT_APP_CLOUDINARY_PRESET_KEY;
-    const cloud_name =  process.env.REACT_APP_CLOUD_NAME; ;
+    const preset_key = process.env.REACT_APP_CLOUDINARY_PRESET_KEY || "funoon";
+    const cloud_name =  process.env.REACT_APP_CLOUD_NAME || "yousuf"; 
     const { user, ready,updateUserContext } = useContext(UserContext);
     const [phoneNo, setPhoneNum] = useState("");
     const [data, setData] = useState({

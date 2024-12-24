@@ -9,8 +9,8 @@ import { Button } from "../components/ui/button";
 import { PhoneInput } from "./PhoneInput";
 
 export default function  UserProfile(props) {
-  const preset_key = process.env.REACT_APP_CLOUDINARY_PRESET_KEY;
-  const cloud_name = process.env.REACT_APP_CLOUD_NAME;
+  const preset_key = process.env.REACT_APP_CLOUDINARY_PRESET_KEY|| "funoon";
+  const cloud_name = process.env.REACT_APP_CLOUD_NAME || "yousuf";
   const [phoneNo, setPhoneNum] = useState("");
   const [data, setData] = useState({
     FirstName: "",

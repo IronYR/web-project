@@ -92,16 +92,16 @@ export default function NavBar({ links }) {
                             Categories
                           </AccordionTrigger>
                           <AccordionContent className="pt-2 pl-3">
-                            <Link to={"/products?category=ceramic"}>Ceramics</Link>
+                            <Link to={"/products?category=handicrafts"}>Handicrafts</Link>
                           </AccordionContent>
                           <AccordionContent className="pt-2 pl-3">
                             <Link to={"/products?category=textile"}>Textiles</Link>
                           </AccordionContent>
                           <AccordionContent className="pt-2 pl-3">
-                            <Link to={"/products?category=wood"}>Woodworks</Link>
+                            <Link to={"/products?category=organic"}>Organic Products</Link>
                           </AccordionContent>
                           <AccordionContent className="pt-2 pl-3">
-                            <Link to={"/products?category=leather"}>Leatherworks</Link>
+                            <Link to={"/products?category=educational"}>Educational Services</Link>
                           </AccordionContent>
                         </AccordionItem>
                       </Accordion>
@@ -210,7 +210,7 @@ export default function NavBar({ links }) {
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm">
-                          Ceramics
+                          Handicrafts
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
@@ -220,12 +220,12 @@ export default function NavBar({ links }) {
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm">
-                          Woodworks
+                          Organic Products
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm">
-                          Leatherworks
+                          Educational Services
                         </Link>
                       </NavigationMenuLink>
                     </li>

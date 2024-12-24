@@ -157,7 +157,7 @@ export default function Component() {
             <div className="grid gap-4 md:gap-10 items-start">
               <img
                 alt="Product Image"
-                className="object-cover h-[60vh] border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800"
+                className="h-[60vh] border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800"
                 src={data.product.images[0]}
               />
             </div>

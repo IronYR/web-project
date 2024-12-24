@@ -19,10 +19,10 @@ const ProductCatalog = () => {
         between50And100: false,
         between100And200: false,
         over200: false,
-        ceramic: false,
+        handicrafts: false,
         textile: false,
-        wood: false,
-        leather: false,
+        organic: false,
+        educational: false,
         above4: false,
         above3: false,
         above2: false,
@@ -49,10 +49,10 @@ const ProductCatalog = () => {
             setFilterData(fetchedData);
             if (category) {
                 const newFilters = { ...filters };
-                if (category === 'ceramic') newFilters.ceramic = true;
+                if (category === 'handicrafts') newFilters.handicrafts = true;
                 else if (category === 'textile') newFilters.textile = true;
-                else if (category === 'wood') newFilters.wood = true;
-                else if (category === 'leather') newFilters.leather = true;
+                else if (category === 'organic') newFilters.organic = true;
+                else if (category === 'educational') newFilters.educational = true;
                 setFilters(newFilters);
                 updateFilteredData(newFilters, fetchedData);
             }}
@@ -103,9 +103,9 @@ const ProductCatalog = () => {
                 .filter((product) => product.price >= 2000)
                 .forEach((product) => finalDataSet.add(product));
         }
-        if (updatedFilters.ceramic) {
+        if (updatedFilters.handicrafts) {
             productsData
-                .filter((product) => product.category === "ceramic")
+                .filter((product) => product.category === "handicrafts")
                 .forEach((product) => finalDataSet.add(product));
         }
         if (updatedFilters.textile) {
@@ -113,14 +113,14 @@ const ProductCatalog = () => {
                 .filter((product) => product.category === "textile")
                 .forEach((product) => finalDataSet.add(product));
         }
-        if (updatedFilters.wood) {
+        if (updatedFilters.organic) {
             productsData
-                .filter((product) => product.category === "wood")
+                .filter((product) => product.category === "organic")
                 .forEach((product) => finalDataSet.add(product));
         }
-        if (updatedFilters.leather) {
+        if (updatedFilters.educational) {
             productsData
-                .filter((product) => product.category === "leather")
+                .filter((product) => product.category === "educational")
                 .forEach((product) => finalDataSet.add(product));
         }
         if (updatedFilters.above4) {
@@ -171,15 +171,15 @@ const ProductCatalog = () => {
                                     <div className="flex items-center gap-2">
                                         <Checkbox
                                             id="category-ceramic"
-                                            checked={filters.ceramic}
+                                            checked={filters.handicrafts}
                                             onCheckedChange={(e) => {
-                                                const newFilters = { ...filters, ceramic: e };
+                                                const newFilters = { ...filters, handicrafts: e };
                                                 setFilters(newFilters);
                                                 updateFilteredData(newFilters);
                                             }}
                                         />
                                         <Label className="text-sm font-medium" htmlFor="category-ceramic">
-                                            Ceramic
+                                            Handicrafts
                                         </Label>
                                     </div>
                                     <div className="flex items-center gap-2">
@@ -198,28 +198,28 @@ const ProductCatalog = () => {
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Checkbox id="category-wood"
-                                            checked={filters.wood}
+                                            checked={filters.organic}
                                             onCheckedChange={(e) => {
-                                                const newFilters = { ...filters, wood: e };
+                                                const newFilters = { ...filters, organic: e };
                                                 setFilters(newFilters);
                                                 updateFilteredData(newFilters);
                                             }}
                                         />
                                         <Label className="text-sm font-medium" htmlFor="category-wood">
-                                            Woods
+                                            Organic Products
                                         </Label>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Checkbox id="category-leather"
-                                            checked={filters.leather}
+                                            checked={filters.educational}
                                             onCheckedChange={(e) => {
-                                                const newFilters = { ...filters, leather: e };
+                                                const newFilters = { ...filters, educational: e };
                                                 setFilters(newFilters);
                                                 updateFilteredData(newFilters);
                                             }}
                                         />
                                         <Label className="text-sm font-medium" htmlFor="category-leather">
-                                            Leatherworks
+                                            Educational Services
                                         </Label>
                                     </div>
                                 </div>

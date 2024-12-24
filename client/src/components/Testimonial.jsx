@@ -6,7 +6,7 @@ const Testimonial = () => {
     <div className="container mx-auto py-12" id="testimonial">
       <div className="space-y-8">
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-          What our customers say
+          What Our Entrepreneurs Say
         </h2>
         <div className="overflow-hidden grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div>
@@ -14,16 +14,16 @@ const Testimonial = () => {
               <div className="flex items-start gap-6">
                 <Avatar>
                   <AvatarImage
-                    alt="Olivia Davis"
+                    alt="Naz Bibi"
                     src="/placeholder-avatar.jpg"
                   />
-                  <AvatarFallback>OD</AvatarFallback>
+                  <AvatarFallback>NB</AvatarFallback>
                 </Avatar>
                 <div className="space-y-2">
                   <div className="space-y-1">
-                    <h4 className="text-lg font-semibold">Olivia Davis</h4>
+                    <h4 className="text-lg font-semibold">Naz Bibi</h4>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      CEO, Acme Inc
+                      Traditional Embroidery
                     </p>
                     <div className="flex items-center gap-0.5">
                       <StarIcon className="w-4 h-4 fill-primary" />
@@ -34,8 +34,7 @@ const Testimonial = () => {
                     </div>
                   </div>
                   <blockquote className="text-lg leading-relaxed">
-                    "The customer service I received was exceptional. The
-                    support team went above and beyond to address my concerns."
+                    "This platform has transformed my business. I now reach customers I never thought possible!"
                   </blockquote>
                 </div>
               </div>
@@ -46,16 +45,16 @@ const Testimonial = () => {
               <div className="flex items-start gap-6">
                 <Avatar>
                   <AvatarImage
-                    alt="Sarah Johnson"
+                    alt="Ayesha Ali"
                     src="/placeholder-avatar.jpg"
                   />
-                  <AvatarFallback>SJ</AvatarFallback>
+                  <AvatarFallback>AA</AvatarFallback>
                 </Avatar>
                 <div className="space-y-2">
                   <div className="space-y-1">
-                    <h4 className="text-lg font-semibold">Sarah Johnson</h4>
+                    <h4 className="text-lg font-semibold">Ayesha Ali</h4>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      CTO, Acme Inc
+                      Handwoven Textiles
                     </p>
                     <div className="flex items-center gap-0.5">
                       <StarIcon className="w-4 h-4 fill-primary" />
@@ -66,8 +65,7 @@ const Testimonial = () => {
                     </div>
                   </div>
                   <blockquote className="text-lg leading-relaxed">
-                    "The product is amazing and has exceeded my expectations.
-                    The team is responsive, helpful and professional."
+                    "The support and resources provided have been invaluable. I feel empowered to grow my business!"
                   </blockquote>
                 </div>
               </div>
@@ -77,14 +75,14 @@ const Testimonial = () => {
             <Card className="p-6 bg-gray-50 dark:bg-gray-800 h-64">
               <div className="flex items-start gap-6">
                 <Avatar>
-                  <AvatarImage alt="Alex Smith" src="/placeholder-avatar.jpg" />
-                  <AvatarFallback>AS</AvatarFallback>
+                  <AvatarImage alt="Fatima's Kitchen" src="/placeholder-avatar.jpg" />
+                  <AvatarFallback>FK</AvatarFallback>
                 </Avatar>
                 <div className="space-y-2">
                   <div className="space-y-1">
-                    <h4 className="text-lg font-semibold">Alex Smith</h4>
+                    <h4 className="text-lg font-semibold">Fatima's Kitchen</h4>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Head of Design, Acme Inc
+                      Home-Made Delicacies
                     </p>
                     <div className="flex items-center gap-0.5">
                       <StarIcon className="w-4 h-4 fill-primary" />
@@ -95,8 +93,7 @@ const Testimonial = () => {
                     </div>
                   </div>
                   <blockquote className="text-lg leading-relaxed">
-                    "I've been using the product for a few months now and it's
-                    been a game-changer for my business. Highly recommended!"
+                    "I never imagined my recipes would reach so many people. This platform has made it possible!"
                   </blockquote>
                 </div>
               </div>
@@ -107,7 +104,9 @@ const Testimonial = () => {
     </div>
   );
 };
+
 export default Testimonial;
+
 function StarIcon(props) {
   return (
     <svg
