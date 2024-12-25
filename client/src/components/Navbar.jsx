@@ -209,22 +209,22 @@ export default function NavBar({ links }) {
                   <ul className="grid gap-3 p-4 w-32">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
-                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm">
+                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm" to={"/products?category=handicrafts"}>
                           Handicrafts
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm">
+                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm" to={"/products?category=textiles"}>
                           Textiles
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm">
+                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm" to={"/products?category=organic"}>
                           Organic Products
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm">
+                        <Link className="flex w-full select-none rounded-md no-underline outline-none p-1 text-sm" to={"/products?category=educational"}>
                           Educational Services
                         </Link>
                       </NavigationMenuLink>
