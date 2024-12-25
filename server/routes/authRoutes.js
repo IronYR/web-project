@@ -13,8 +13,8 @@ router.use(
 )
 passport.use(
     new OAuth2Strategy({
-        clientID:process.env.CLIENT_ID || "197358762647-ks9so89ru6cgjbr10lj1gif8rlsupn2r.apps.googleusercontent.com",  
-        clientSecret:process.env.CLIENT_SECRET || "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",
+        clientID: "197358762647-ks9so89ru6cgjbr10lj1gif8rlsupn2r.apps.googleusercontent.com",  
+        clientSecret: "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",
         callbackURL:'/auth/google/callback',
         scope:["profile","email"],
     },

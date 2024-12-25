@@ -17,6 +17,7 @@ const Landing = () => {
           {button: false, path: "#top", name: "Top Picks"},
           {button: false, path: "#artisan", name: "Featured Artisans"},
           {button: false, path: "#testimonial", name: "Testimonials"},
+          {butotn: false, path: "/resources", name: "Skill Building Resources"},
           { button: true, path: "/login", btn_name: "Login" },
           { button: true, path: "/register", btn_name: "Register" },
 
