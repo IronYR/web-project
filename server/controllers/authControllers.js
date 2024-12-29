@@ -80,19 +80,27 @@ const createOrder = async (req, res) => {
     }
 }
 /////
+
 const sendVerifyEmail = async (name, email, id) => {
     try {
+        // Configure the transporter with basic SMTP settings
         const transporter = nodemailer.createTransport({
-            service:"gmail",
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true, // true for 465, false for other ports like 587
             auth: {
-                user: 'needaspeed639@gmail.com',
-                pass: 'qsws dzzd gokz uytu',
-            },
+                user: process.env.USEREMAIL, // Your SMTP user (email address)
+                pass: process.env.USERPASS  // Your SMTP password or app-specific password
+            }
         });
-        const expirationTimestamp = Math.floor(new Date().getTime() / 1000)
 
+        // Verify transporter
+        await transporter.verify();
+
+        // Prepare email content
+        const expirationTimestamp = Math.floor(new Date().getTime() / 1000);
         const mailOptions = {
-            from: 'needaspeed639@gmail.com',
+            from: process.env.USEREMAIL, // Your verified sender email
             to: email,
             subject: 'Email Verification',
             html: `<div style="font-family: Arial, sans-serif; margin: 0 auto; max-width: 600px; padding: 20px;">
@@ -101,15 +109,20 @@ const sendVerifyEmail = async (name, email, id) => {
             <div style="text-align: center; margin-top: 20px;">
                 <a href="https://web-project-funoon.vercel.app/verify/${id}/${expirationTimestamp}" style="display: inline-block; background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
             </div>
-        </div>`,
+            </div>`
         };
 
-        const data = await transporter.sendMail(mailOptions);
-        console.log('EMAIL SENT ', email, data.response);
+        // Send email and await completion
+        const info = await transporter.sendMail(mailOptions);
+
+        // Log success
+        console.log('EMAIL SENT ', email, info.response);
     } catch (error) {
+        // Handle errors
         console.error('Error sending verification email:', error.message);
     }
 };
+
 const verifyMail = async (req, res) => {
     const { id, expirationTimestamp } = req.params;
     const currentTimestamp = Math.floor(new Date().getTime() / 1000);
@@ -179,13 +192,13 @@ const loginUser = async (req, res) => {
             email: userDoc.email,
             id: userDoc._id,
             isSeller:userDoc.isSeller
-        }, process.env.JWT_SECRET, (err, token) => {
+        }, process.env.JWT_SECRET,{expiresIn:'1d'}, (err, token) => {
             if (err) {
                 console.error('Error signing JWT:', err);
                 return res.status(500).json({ error: 'Internal Server Error' });
             }
-            res.cookie('token', token);
-            res.json({ success: 'Successfully Login', user: userDoc });
+            
+            res.json({ success: 'Successfully Login',token, user: userDoc });
         });
     } catch (error) {
         console.error('Error in loginUser: ', error);
@@ -194,7 +207,7 @@ const loginUser = async (req, res) => {
 };
 
 const getProfile= async (req,res)=>{
-    const {token} = req.cookies;
+    const token = req.headers.authorization.split(' ')[1];
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, {}, async (err, userData) => {
       if (err) throw err;
@@ -208,7 +221,7 @@ const getProfile= async (req,res)=>{
         res.json({FirstName,email,_id,address,isSeller,image,phoneNo,brand});
       }
       else{
-        const {FirstName,email,_id,address,isSeller,image,phoneNo,brand} = await User.findById(userData.id).populate(
+        const {FirstName,email,_id,address,isSeller,image,phoneNo,brand} = await  User.findById(userData.id).populate(
             {
                 path:'brand',
                 select:'name image'
@@ -224,8 +237,9 @@ const getProfile= async (req,res)=>{
   }
 }
 const logOut =(req,res) =>{
-    res.cookie('token', '').json({success:'Logged Out'});
-    res.clearCookie('connect.sid', { sameSite: 'None', secure: true })
+    // issue here
+    res.cookie('token', '').json({success:"Logged Out"});
+    res.clearCookie('connect.sid',{path:'/'})
     return res.json({Status:"Success"})
 }
 const PasswordReset = async (req, res) => {

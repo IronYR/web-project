@@ -84,6 +84,7 @@ function App() {
         path="/seller-register"
         element={<SellerRegistration/>}
       />
+      <Route path="/google/auth/success" element={<GoogleAuthSuccess/>} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route
         path="/orders/:id"

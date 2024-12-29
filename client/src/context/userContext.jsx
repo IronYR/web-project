@@ -9,12 +9,25 @@ export function UserContextProvider({children}) {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get('/profile');
+      const token = localStorage.getItem("token");
+      if (!token) {
+            setReady(true); // Set ready to true even if there's no token
+            return;
+          }
+        const response = await axios.get('/profile',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setUser(response.data);
       setReady(true);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
     }
+      catch (error) {
+        console.error("Error fetching user data:", error);
+      }  
+      
   };
 
   const updateUserContext = async () => {
