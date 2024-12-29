@@ -9,7 +9,7 @@ const {mongoose} = require ('mongoose')
 const stripe = require ("./routes/stripe")
 //middleware
 const corsOptions ={
-    origin: '*', // Allow access from anywhere
+    origin: 'http://localhost:3000', // Allow access from anywhere
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200,
 }
