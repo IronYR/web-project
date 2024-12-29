@@ -24,6 +24,8 @@ import AddProduct from "./pages/AddProduct";
 import ProductInfo from "./pages/ProductInfo.jsx";
 import SellerCatalog from "./pages/SellerCatalog.jsx";
 import SkillBuildingResources from "./pages/SkillBuildingResources.jsx";
+import Checkout from "./pages/Checkout.jsx"
+// axios.defaults.baseURL = `https://web-project-git-vercel-ironyrs-projects.vercel.app`;
 axios.defaults.baseURL = `http://localhost:8000`;
 axios.defaults.withCredentials = true;
 
@@ -97,6 +99,7 @@ function App() {
       />
       <Route path="/artisans" element={<Artisans />} />
       <Route path="/product/seller/:id" element={<SellerCatalog />} />
+      <Route path="/checkout-success" element={<Checkout />} />
 
       <Route path="/resources" element={<SkillBuildingResources/>}/>
       <Route path="*" element={<NotFound />} />
