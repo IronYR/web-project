@@ -25,7 +25,7 @@ import ProductInfo from "./pages/ProductInfo.jsx";
 import SellerCatalog from "./pages/SellerCatalog.jsx";
 import SkillBuildingResources from "./pages/SkillBuildingResources.jsx";
 // axios.defaults.baseURL = process.env.REACT_APP_API_URL ||"https://web-project-green-nu.vercel.app"|| `http://localhost:8000`;
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 axios.defaults.baseURL ="https://web-project-green-nu.vercel.app"
 
 function App() {
