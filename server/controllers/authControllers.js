@@ -267,12 +267,12 @@ const emailNewPass = async (id,token,email) =>{
                 const transporter = nodemailer.createTransport({
                     service:"gmail",
                     auth: {
-                        user: 'needaspeed639@gmail.com',
-                        pass: 'qsws dzzd gokz uytu',
+                        user: process.env.USEREMAIL,
+                        pass: process.env.USERPASS,
                     },
                 });
                 const mailOptions = {
-                    from: 'needaspeed639@gmail.com',
+                    from: process.env.USEREMAIL,
                     to: email,
                     subject: 'Password Reset',
                     html: ` <div style="font-family: Arial, sans-serif; margin: 0 auto; max-width: 600px; padding: 20px;">
