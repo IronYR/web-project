@@ -99,7 +99,7 @@ const sendVerifyEmail = async (name, email, id) => {
             <h2 style="color: #333;">Hi ${name},</h2>
             <p style="color: #555;">Please verify your email address by clicking the button below:</p>
             <div style="text-align: center; margin-top: 20px;">
-                <a href="http://localhost:3000/verify/${id}/${expirationTimestamp}" style="display: inline-block; background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
+                <a href="https://web-project-funoon.vercel.app/verify/${id}/${expirationTimestamp}" style="display: inline-block; background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Verify Email</a>
             </div>
         </div>`,
         };
@@ -248,7 +248,7 @@ const PasswordReset = async (req, res) => {
     }
 }
 const emailNewPass = async (id,token,email) =>{
-    url = `http://localhost:3000/ForgotPassword/${id}/${token}`
+    url = `https://web-project-funoon.vercel.app/ForgotPassword/${id}/${token}`
             try {
                 const transporter = nodemailer.createTransport({
                     service:"gmail",
@@ -533,8 +533,8 @@ const stripeIntegration = async (req, res) => {
         }],
         customer: customer.id,
         mode: 'payment',
-        success_url: 'http://localhost:3000/checkout-success',
-        cancel_url: 'http://localhost:3000/shoppingcart',
+        success_url: 'https://web-project-funoon.vercel.app/checkout-success',
+        cancel_url: 'https://web-project-funoon.vercel.app/shoppingcart',
     });
   res.send({url:session.url});
 }

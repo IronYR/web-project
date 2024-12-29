@@ -8,7 +8,7 @@ const {registerUser,getProfile,loginUser,logOut,verifyMail,NewPassword,PasswordR
 router.use(
     cors({
         credentials:true,
-        origin:'http://localhost:3000',
+        origin:'https://web-project-funoon.vercel.app',
         optionsSuccessStatus: 200
     })
 )
@@ -74,13 +74,13 @@ router.get('/seller-detail/:id',sellerDetails)
 router.get('/products/:id',getProductsDetails)
 router.get('/auth/google',passport.authenticate('google', { scope: ['profile','email'] }))
 
-router.get('/auth/google/callback',passport.authenticate('google', { failureRedirect: 'http://localhost:3000/google/auth/ValidationFailure' }),
+router.get('/auth/google/callback',passport.authenticate('google', { failureRedirect: 'https://web-project-funoon.vercel.app/google/auth/ValidationFailure' }),
 function(req, res) {
     // const {id,FirstName,email} = await User.findOne({googleID:req.user.googleID})   
      
   const token = generateToken(req.user);
   // Set the token as a cookie
   res.cookie('token', token, { maxAge: 3600000, httpOnly: true }); 
-  res.redirect('http://localhost:3000')
+  res.redirect('https://web-project-funoon.vercel.app')
 })
 module.exports = router
