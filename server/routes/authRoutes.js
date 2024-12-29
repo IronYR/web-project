@@ -8,7 +8,8 @@ const {registerUser,getProfile,loginUser,logOut,verifyMail,NewPassword,PasswordR
 router.use(
     cors({
         credentials:true,
-        origin:'http://localhost:3000'
+        origin:'http://localhost:3000',
+        optionsSuccessStatus: 200
     })
 )
 passport.use(

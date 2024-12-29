@@ -23,6 +23,7 @@ import { SellerRegistration } from "./pages/SellerRegistration.jsx";
 import AddProduct from "./pages/AddProduct";
 import ProductInfo from "./pages/ProductInfo.jsx";
 import SellerCatalog from "./pages/SellerCatalog.jsx";
+import Checkout from "./pages/Checkout.jsx";
 import SkillBuildingResources from "./pages/SkillBuildingResources.jsx";
 // axios.defaults.baseURL = process.env.REACT_APP_API_URL ||"https://web-project-green-nu.vercel.app"|| `http://localhost:8000`;
 axios.defaults.withCredentials = true;
@@ -98,6 +99,7 @@ function App() {
       />
       <Route path="/artisans" element={<Artisans />} />
       <Route path="/product/seller/:id" element={<SellerCatalog />} />
+      <Route path="/checkout-success" element={<Checkout />} />
 
       <Route path="/resources" element={<SkillBuildingResources/>}/>
       <Route path="*" element={<NotFound />} />
